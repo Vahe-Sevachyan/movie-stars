@@ -12,18 +12,6 @@ fetchData();
 
 const input = document.querySelector("input");
 
-const deBounce = (func, delay = 1000) => {
-  let timeoutId;
-  return (...arg) => {
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
-    timeoutId = setTimeout(() => {
-      func.apply(null, arg);
-    }, delay);
-  };
-};
-
 const onInput = (event) => {
   fetchData(event.target.value);
 };
